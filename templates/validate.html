@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Validation{% endblock %}
+{% block eyebrow %}System{% endblock %}
+{% block page_title %}Validation{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <p>Runs the engine's own self-checks — dataset integrity, model artifacts, the prediction pipeline,
+     and generated visuals — and reports pass or fail for each.</p>
+  <button class="btn-ibde btn-primary-ibde" id="reRunBtn">Re-run checks</button>
+</div>
+
+<div id="validateRoot" class="row g-3"></div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="/static/js/validate.js"></script>
+{% endblock %}

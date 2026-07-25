@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Preprocessing{% endblock %}
+{% block eyebrow %}Stage 03{% endblock %}
+{% block page_title %}Preprocessing{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <p>Runs the engine's preprocessing pipeline: median imputation and scaling for numeric columns,
+     most-frequent imputation and one-hot encoding for categorical columns.</p>
+</div>
+
+<div class="row g-3">
+  <div class="col-lg-5">
+    <div class="card-ibde">
+      <div class="card-head"><h5>Run preprocessing</h5></div>
+      <div class="card-body-ibde">
+        <label class="field-label" for="fileName">Dataset filename</label>
+        <input class="form-control-ibde" id="fileName" placeholder="e.g. sales.csv">
+        <div class="help-text">The filename you uploaded in Stage 01, as saved in the dataset folder.</div>
+
+        <label class="field-label" for="targetCol" style="margin-top:16px;">Target column</label>
+        <input class="form-control-ibde" id="targetCol" placeholder="e.g. churn">
+        <div class="help-text">The column the model should learn to predict — every other column becomes a feature.</div>
+
+        <button class="btn-ibde btn-primary-ibde" id="runBtn" style="margin-top:18px;">
+          Run preprocessing
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-7">
+    <div class="card-ibde" style="height:100%;">
+      <div class="card-head"><h5>Result</h5></div>
+      <div class="card-body-ibde" id="resultWrap">
+        <div class="empty-state">
+          <div class="sub">Run preprocessing to see the transformed feature shape here.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="/static/js/preprocessing.js"></script>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Prediction{% endblock %}
+{% block eyebrow %}Stage 05{% endblock %}
+{% block page_title %}Prediction{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <p>Score new data against whichever model was trained in the recommendation step —
+     a single column for one prediction, or a full CSV for batch scoring.</p>
+</div>
+
+<div class="row g-3">
+  <div class="col-lg-6">
+    <div class="card-ibde">
+      <div class="card-head"><h5>Single prediction</h5></div>
+      <div class="card-body-ibde">
+        <label class="field-label" for="spFile">CSV file</label>
+        <input type="file" accept=".csv" class="form-control-ibde" id="spFile">
+
+        <label class="field-label" for="spColumn" style="margin-top:14px;">Column to predict from</label>
+        <input class="form-control-ibde" id="spColumn" placeholder="e.g. age">
+        <div class="help-text">Must be a column name that exists in the uploaded file.</div>
+
+        <button class="btn-ibde btn-primary-ibde" id="spBtn" style="margin-top:16px;">Predict</button>
+
+        <div id="spResult" style="margin-top:16px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <div class="card-ibde">
+      <div class="card-head"><h5>Batch prediction</h5></div>
+      <div class="card-body-ibde">
+        <label class="field-label" for="bpFile">CSV file</label>
+        <input type="file" accept=".csv" class="form-control-ibde" id="bpFile">
+        <div class="help-text">Every row is scored with the regression, classification, and clustering models.</div>
+
+        <button class="btn-ibde btn-primary-ibde" id="bpBtn" style="margin-top:16px;">Run batch prediction</button>
+
+        <div id="bpResult" style="margin-top:16px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="/static/js/predict.js"></script>
+{% endblock %}

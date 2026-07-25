@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Data Profiling{% endblock %}
+{% block eyebrow %}Stage 02{% endblock %}
+{% block page_title %}Data Profiling{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <p>A structural read of the active dataset: size, missing values, duplicates, outliers, and the
+     split between numerical and categorical columns.</p>
+</div>
+
+<div id="profilingRoot">
+  <div class="empty-state">
+    <div class="icon-wrap"><span class="spinner-ibde dark"></span></div>
+    <div class="title">Checking the profiling endpoint…</div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="/static/js/profiling.js"></script>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}About{% endblock %}
+{% block eyebrow %}Project{% endblock %}
+{% block page_title %}About IBDE{% endblock %}
+
+{% block content %}
+<div class="row g-3">
+  <div class="col-lg-7">
+    <div class="card-ibde">
+      <div class="card-body-ibde">
+        <span class="hero-tag" style="color:var(--blue-500); background:var(--blue-050);">v1.0</span>
+        <h2 style="font-size:22px; margin:10px 0 8px;">Intelligent Business Decision Engine</h2>
+        <p style="color:var(--text-muted); font-size:13.5px;">
+          A universal machine learning platform: upload any tabular dataset, and the engine profiles
+          it, preprocesses it, recommends the strongest algorithm for the problem, trains it, and
+          turns the result into predictions and visual insight — without writing a line of ML code.
+        </p>
+        <div class="divider"></div>
+        <div class="kv-row"><span class="k">Author</span><span class="v" style="font-family:var(--font-body); font-weight:600;">Krishna Agarwal</span></div>
+        <div class="kv-row"><span class="k">Framework</span><span class="v">FastAPI</span></div>
+        <div class="kv-row"><span class="k">Machine learning</span><span class="v">Scikit-learn</span></div>
+        <div class="kv-row"><span class="k">Version</span><span class="v">1.0</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-5">
+    <div class="card-ibde">
+      <div class="card-head"><h5>Technologies used</h5></div>
+      <div class="card-body-ibde">
+        {% set stack = [
+          "FastAPI", "Scikit-learn", "Pandas", "NumPy",
+          "Matplotlib", "Seaborn", "Joblib", "Bootstrap 5"
+        ] %}
+        {% for t in stack %}
+        <span class="badge-ibde badge-neutral" style="margin:0 6px 8px 0;">{{ t }}</span>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="card-ibde" style="margin-top:16px;">
+      <div class="card-head"><h5>Pipeline</h5></div>
+      <div class="card-body-ibde">
+        <div class="pipeline-strip" style="flex-wrap:wrap;">
+          <div class="pipeline-node done"><span class="num">1</span>Upload</div>
+          <div class="pipeline-connector"></div>
+          <div class="pipeline-node done"><span class="num">2</span>Profile</div>
+          <div class="pipeline-connector"></div>
+          <div class="pipeline-node done"><span class="num">3</span>Preprocess</div>
+          <div class="pipeline-connector"></div>
+          <div class="pipeline-node done"><span class="num">4</span>Recommend</div>
+          <div class="pipeline-connector"></div>
+          <div class="pipeline-node done"><span class="num">5</span>Predict</div>
+          <div class="pipeline-connector"></div>
+          <div class="pipeline-node done"><span class="num">6</span>Visualize</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

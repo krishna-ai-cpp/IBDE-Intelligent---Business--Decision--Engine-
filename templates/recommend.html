@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}ML Recommendation{% endblock %}
+{% block eyebrow %}Stage 04{% endblock %}
+{% block page_title %}ML Recommendation{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <p>Leave the target column blank to cluster the dataset unsupervised. Set a target column and the
+     engine automatically chooses regression or classification and races several algorithms to find the best one.</p>
+</div>
+
+<div class="row g-3">
+  <div class="col-lg-5">
+    <div class="card-ibde">
+      <div class="card-head"><h5>Get a recommendation</h5></div>
+      <div class="card-body-ibde">
+        <label class="field-label" for="fileName">Dataset filename</label>
+        <input class="form-control-ibde" id="fileName" placeholder="e.g. sales.csv">
+
+        <label class="field-label" for="targetCol" style="margin-top:16px;">Target column <span style="font-weight:400; color:var(--text-faint);">(optional — leave blank to cluster)</span></label>
+        <input class="form-control-ibde" id="targetCol" placeholder="e.g. churn">
+
+        <button class="btn-ibde btn-primary-ibde" id="runBtn" style="margin-top:18px;">
+          Recommend best approach
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-7">
+    <div class="card-ibde" style="height:100%;">
+      <div class="card-head"><h5>Recommendation</h5></div>
+      <div class="card-body-ibde" id="resultWrap">
+        <div class="empty-state">
+          <div class="sub">Run a recommendation to see the chosen algorithm and why it was picked.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="/static/js/recommend.js"></script>
+{% endblock %}

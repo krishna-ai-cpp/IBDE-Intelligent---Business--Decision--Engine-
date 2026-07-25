@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Visualization{% endblock %}
+{% block eyebrow %}Stage 06{% endblock %}
+{% block page_title %}Visualization{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <p>Choose a CSV and generate the engine's visual outputs. Each visual regenerates and refreshes
+     automatically in place.</p>
+</div>
+
+<div class="card-ibde" style="margin-bottom:20px;">
+  <div class="card-body-ibde" style="display:flex; gap:14px; align-items:center; flex-wrap:wrap;">
+    <input type="file" accept=".csv" class="form-control-ibde" id="vizFile" style="max-width:320px;">
+    <button class="btn-ibde btn-outline-ibde" id="btnSummary">Summary</button>
+    <button class="btn-ibde btn-outline-ibde" id="btnHeatmap">Heatmap</button>
+    <button class="btn-ibde btn-outline-ibde" id="btnDistribution">Distribution</button>
+    <button class="btn-ibde btn-outline-ibde" id="btnScatter">Scatter plot</button>
+    <button class="btn-ibde btn-outline-ibde" id="btnFtImp">Feature importance</button>
+  </div>
+</div>
+
+<div id="summaryWrap"></div>
+
+<div class="row g-3" style="margin-top:4px;">
+  <div class="col-lg-6">
+    <div class="card-ibde">
+      <div class="card-head"><h5>Correlation heatmap</h5></div>
+      <div class="card-body-ibde" id="heatmapWrap">
+        <div class="empty-state"><div class="sub">Generate a heatmap to see it here.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card-ibde">
+      <div class="card-head"><h5>Distribution</h5></div>
+      <div class="card-body-ibde" id="distributionWrap">
+        <div class="empty-state"><div class="sub">Generate a distribution plot to see it here.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card-ibde">
+      <div class="card-head"><h5>Scatter plot</h5></div>
+      <div class="card-body-ibde" id="scatterWrap">
+        <div class="empty-state"><div class="sub">Generate a scatter plot to see it here.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card-ibde">
+      <div class="card-head"><h5>Feature importance</h5></div>
+      <div class="card-body-ibde" id="ftImpWrap">
+        <div class="empty-state"><div class="sub">Generate feature importance to see it here.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="/static/js/visualize.js"></script>
+{% endblock %}
