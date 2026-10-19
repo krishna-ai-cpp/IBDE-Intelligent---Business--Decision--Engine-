@@ -1,0 +1,4 @@
+# Show the Python application core in the repository language summary.
+# Browser UI source stays intact and retains its actual syntax highlighting.
+static/** -linguist-detectable
+templates/** -linguist-detectable
