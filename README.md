@@ -29,6 +29,8 @@ The clustering comparison winner and the saved KMeans model are separate outputs
 
 ## Run locally
 
+**These are local development addresses, not a publicly hosted website.** `127.0.0.1` means the computer where your browser is running. Clicking a link below works only after IBDE has started on that computer; GitHub stores the source code and does not start the Python server for you.
+
 From your **existing repository folder**, use Python 3.12; the checked-in `.python-version` specifies 3.12.3.
 
 ```powershell
@@ -37,12 +39,20 @@ py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m uvicorn final_integration:app --reload
 ```
 
+Keep that terminal running while using the app. When the terminal reports that Uvicorn is running on port 8000, open the dashboard below.
+
+### Windows launcher
+
+Alternatively, double-click **`Start IBDE.cmd`** in the repository folder. On first use, it prepares the Python 3.12 environment if necessary, starts the server in the background, waits for it to respond, and opens the dashboard. Running it again reuses an existing IBDE server rather than starting a duplicate. Startup logs are stored locally in `.ibde/`. Double-click **`Stop IBDE.cmd`** to stop the server started by this launcher.
+
 | Page | Local address |
 | :--- | :--- |
 | Dashboard | http://127.0.0.1:8000/app |
 | Interactive API documentation | http://127.0.0.1:8000/docs |
 | Health endpoint | http://127.0.0.1:8000/health |
 | API metadata | http://127.0.0.1:8000/ |
+
+If the browser says **site can't be reached**, run the launcher or start command first. If startup fails, inspect the terminal output or `.ibde/server-error.log`. After restarting Windows, start IBDE again. These addresses will not work on another person's PC unless they run their own copy; a separate public deployment is needed for an online demo.
 
 ### Suggested walkthrough
 

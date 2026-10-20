@@ -1,0 +1,12 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.env
+.ibde/
+dataset/
+models/
+plots/
+heatmap_*.png
+Histplot_*.png
+Scatterplot_*.png
