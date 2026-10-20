@@ -27,6 +27,16 @@ IBDE connects CSV upload, preprocessing, regression/classification/clustering ex
 
 The clustering comparison winner and the saved KMeans model are separate outputs.
 
+## Public demo deployment
+
+This application needs a running Python web service. GitHub Pages serves static websites and cannot run the FastAPI backend. The repository includes a [Render deployment configuration](render.yaml) for a free web service with a `/health` readiness check.
+
+[Deploy this repository to Render](https://render.com/deploy?repo=https%3A%2F%2Fgithub.com%2Fkrishna-ai-cpp%2FIBDE-Intelligent---Business--Decision--Engine-)
+
+The hosting account must be connected before a service can be created. A verified public demo URL has not been added yet. Once Render assigns the service's HTTPS address, the dashboard is at `/app`, the interactive API documentation is at `/docs`, and the health endpoint is at `/health` on that same public address.
+
+The free service can sleep when idle, and generated datasets/models are not permanent storage. Use small, non-sensitive demo datasets. Run one training workflow at a time because model artifacts are shared.
+
 ## Run locally
 
 **These are local development addresses, not a publicly hosted website.** `127.0.0.1` means the computer where your browser is running. Clicking a link below works only after IBDE has started on that computer; GitHub stores the source code and does not start the Python server for you.
